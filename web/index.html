@@ -18,18 +18,28 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="A minimal Flutter ride booking map demo.">
+  <meta name="theme-color" content="#ffffff">
+  <style>
+    /* Keep provider credits above the rounded booking sheet on Flutter web. */
+    .maplibregl-ctrl-bottom-left { bottom: 32px !important; }
+    .maplibregl-ctrl-attrib { font: 10px/16px sans-serif; }
+    /* Collapse attribution into the existing information button, preserving links. */
+    .maplibregl-ctrl-attrib:not(.maplibregl-compact-show) .maplibregl-ctrl-attrib-inner { display: none; }
+    .maplibregl-ctrl-attrib .maplibregl-ctrl-attrib-button { display: block !important; }
+    .maplibregl-ctrl-attrib:not(.maplibregl-compact-show) { width: 24px; height: 24px; padding: 0; border-radius: 12px; }
+  </style>
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="map">
+  <meta name="apple-mobile-web-app-title" content="Ride">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>map</title>
+  <title>Ride · Bản đồ đặt xe</title>
   <link rel="manifest" href="manifest.json">
 </head>
 <body>

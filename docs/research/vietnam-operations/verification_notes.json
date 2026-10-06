@@ -1,0 +1,23 @@
+{
+  "manual_meaning_verification": "All14 factual ledger entries independently compared to the opened source or relevant official indexed paragraph;14 supported.4 proposed design entries labeled inference, not proprietary policy.",
+  "lexical_support_warning": "Verifier reports4 partial entries, all explicitly inference. There are0 unsupported factual claims. Textual overlap alone cannot prove semantic or temporal validity.",
+  "report_gate_warning": "Optional academic sections Counterevidence Register and Claims-Evidence Table are absent as separate headings; temporal contradictions, inaccessible help page and coverage limits appear in prose/ledgers.",
+  "freshness": "Retrieved06/10/2026. No brand live quote or current guaranteed driver availability asserted; historical sources labeled.",
+  "word_limits": "No long verbatim extracts. Factual source summaries kept compact; most body is explicitly original demo design analysis. Numeric tier examples are original arithmetic, not quotes.",
+  "source_access": "Grabhelp115005848608 inaccessible via native webopen, numeric current change fees excluded. All14 included bibliography URLs passed verification.",
+  "word_count_whitespace": 3990,
+  "validators": {
+    "validate_report.py": {
+      "exit_code": 0,
+      "log": "report_validation.txt"
+    },
+    "verify_citations.py": {
+      "exit_code": 0,
+      "log": "citation_validation.txt"
+    },
+    "verify_claim_support.py": {
+      "exit_code": 0,
+      "log": "claim_support_validation.txt"
+    }
+  }
+}

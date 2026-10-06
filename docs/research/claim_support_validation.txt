@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "verified": 25,
+  "support_status_counts": {
+    "supported": 20,
+    "partial": 5
+  },
+  "factual_unsupported": 0,
+  "total_factual": 20,
+  "unsupported_rate": 0.0
+}

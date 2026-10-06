@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
-import 'screens/map_screen.dart';
+import 'package:maplibre_gl/maplibre_gl.dart';
+
+import 'core/app_theme.dart';
+import 'features/booking/presentation/booking_screen.dart';
 
 void main() {
+  // Android TextureView allows Flutter to composite our animated sheet and pin.
+  // This SDK setting is ignored by the web and iOS implementations.
+  MapLibreMap.useHybridComposition = true;
   runApp(const MyApp());
 }
 
@@ -11,13 +17,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Demo Map & Service Layer',
+      title: 'Ride · Bản đồ đặt xe',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: Colors.indigo,
+      theme: rideTheme(),
+      builder: (context, child) => ColoredBox(
+        color: const Color(0xFFEDEDEB),
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 560),
+            child: child,
+          ),
+        ),
       ),
-      home: const MapScreen(),
+      home: const BookingScreen(),
     );
   }
 }

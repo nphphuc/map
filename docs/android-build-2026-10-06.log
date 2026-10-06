@@ -1,0 +1,243 @@
+Resolving dependencies...
+Downloading packages...
+  dbus 0.7.15 (0.8.0 available)
+  gsettings 0.2.8 (0.2.9 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  meta 1.18.3 (1.19.0 available)
+  petitparser 7.0.2 (7.1.0 available)
+  test_api 0.7.12 (0.7.14 available)
+  vector_math 2.4.0 (2.4.3 available)
+  xml 7.0.1 (7.1.0 available)
+Got dependencies!
+8 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/C:/Users/Admin/.gradle/wrapper/dists/gradle-9.3.1-all/9ot9r568e8zfvvd4mn8rbu1j0/gradle-9.3.1/lib/native-platform-0.22-milestone-29.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+> Task :gradle:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :gradle:compileKotlin UP-TO-DATE
+> Task :gradle:compileJava NO-SOURCE
+> Task :gradle:compileGroovy NO-SOURCE
+> Task :gradle:pluginDescriptors UP-TO-DATE
+> Task :gradle:processResources UP-TO-DATE
+> Task :gradle:classes UP-TO-DATE
+> Task :gradle:jar UP-TO-DATE
+
+> Configure project :app
+WARNING: The option setting 'android.builtInKotlin=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.newDsl=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+w: Deprecated 'org.jetbrains.kotlin.android' plugin usage
+The 'org.jetbrains.kotlin.android' plugin in project ':app' is no longer required for Kotlin support since AGP 9.0.
+Solution: Remove both `android.builtInKotlin=true` and `android.newDsl=false` from `gradle.properties`, then migrate to built-in Kotlin.
+See https://kotl.in/gradle/agp-built-in-kotlin for more details.
+
+
+> Configure project :geolocator_android
+w: Deprecated 'org.jetbrains.kotlin.android' plugin usage
+The 'org.jetbrains.kotlin.android' plugin in project ':geolocator_android' is no longer required for Kotlin support since AGP 9.0.
+Solution: Remove both `android.builtInKotlin=true` and `android.newDsl=false` from `gradle.properties`, then migrate to built-in Kotlin.
+See https://kotl.in/gradle/agp-built-in-kotlin for more details.
+
+
+> Configure project :maplibre_gl
+w: Deprecated 'org.jetbrains.kotlin.android' plugin usage
+The 'org.jetbrains.kotlin.android' plugin in project ':maplibre_gl' is no longer required for Kotlin support since AGP 9.0.
+Solution: Remove both `android.builtInKotlin=true` and `android.newDsl=false` from `gradle.properties`, then migrate to built-in Kotlin.
+See https://kotl.in/gradle/agp-built-in-kotlin for more details.
+
+
+> Configure project :package_info_plus
+w: Deprecated 'org.jetbrains.kotlin.android' plugin usage
+The 'org.jetbrains.kotlin.android' plugin in project ':package_info_plus' is no longer required for Kotlin support since AGP 9.0.
+Solution: Remove both `android.builtInKotlin=true` and `android.newDsl=false` from `gradle.properties`, then migrate to built-in Kotlin.
+See https://kotl.in/gradle/agp-built-in-kotlin for more details.
+
+
+> Task :app:DebugMinSdkCheck
+> Task :app:validateCompileSdkVersion
+> Task :app:preBuild
+> Task :app:preDebugBuild
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:cleanMergeDebugAssets
+> Task :app:compileFlutterBuildDebug
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :geolocator_android:generateDebugAssets UP-TO-DATE
+> Task :geolocator_android:preBuild UP-TO-DATE
+> Task :geolocator_android:preDebugBuild UP-TO-DATE
+> Task :geolocator_android:mergeDebugAssets UP-TO-DATE
+> Task :maplibre_gl:generateDebugAssets UP-TO-DATE
+> Task :maplibre_gl:preBuild UP-TO-DATE
+> Task :maplibre_gl:preDebugBuild UP-TO-DATE
+> Task :maplibre_gl:mergeDebugAssets UP-TO-DATE
+> Task :package_info_plus:generateDebugAssets UP-TO-DATE
+> Task :package_info_plus:preBuild UP-TO-DATE
+> Task :package_info_plus:preDebugBuild UP-TO-DATE
+> Task :package_info_plus:mergeDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:copyFlutterAssetsDebug
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :geolocator_android:processDebugNavigationResources UP-TO-DATE
+> Task :maplibre_gl:processDebugNavigationResources UP-TO-DATE
+> Task :package_info_plus:processDebugNavigationResources UP-TO-DATE
+> Task :app:processDebugNavigationResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:generateDebugRFile UP-TO-DATE
+> Task :geolocator_android:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :geolocator_android:generateDebugResources UP-TO-DATE
+> Task :geolocator_android:packageDebugResources UP-TO-DATE
+> Task :geolocator_android:parseDebugLocalResources UP-TO-DATE
+> Task :geolocator_android:generateDebugRFile UP-TO-DATE
+> Task :geolocator_android:compileDebugKotlin NO-SOURCE
+> Task :geolocator_android:javaPreCompileDebug UP-TO-DATE
+> Task :geolocator_android:compileDebugJavaWithJavac UP-TO-DATE
+> Task :geolocator_android:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :maplibre_gl:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :maplibre_gl:generateDebugResources UP-TO-DATE
+> Task :maplibre_gl:packageDebugResources UP-TO-DATE
+> Task :maplibre_gl:parseDebugLocalResources UP-TO-DATE
+> Task :maplibre_gl:generateDebugRFile UP-TO-DATE
+> Task :maplibre_gl:compileDebugKotlin UP-TO-DATE
+> Task :maplibre_gl:javaPreCompileDebug UP-TO-DATE
+> Task :maplibre_gl:compileDebugJavaWithJavac UP-TO-DATE
+> Task :maplibre_gl:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :package_info_plus:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :package_info_plus:generateDebugResources UP-TO-DATE
+> Task :package_info_plus:packageDebugResources UP-TO-DATE
+> Task :package_info_plus:parseDebugLocalResources UP-TO-DATE
+> Task :package_info_plus:generateDebugRFile UP-TO-DATE
+> Task :package_info_plus:compileDebugKotlin UP-TO-DATE
+> Task :package_info_plus:javaPreCompileDebug UP-TO-DATE
+> Task :package_info_plus:compileDebugJavaWithJavac NO-SOURCE
+> Task :package_info_plus:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :app:compileDebugKotlin UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :geolocator_android:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :maplibre_gl:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :package_info_plus:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :geolocator_android:writeDebugAarMetadata UP-TO-DATE
+> Task :maplibre_gl:writeDebugAarMetadata UP-TO-DATE
+> Task :package_info_plus:writeDebugAarMetadata UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:compileDebugNavigationResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :geolocator_android:extractDeepLinksDebug UP-TO-DATE
+> Task :geolocator_android:processDebugManifest UP-TO-DATE
+> Task :maplibre_gl:extractDeepLinksDebug UP-TO-DATE
+> Task :maplibre_gl:processDebugManifest UP-TO-DATE
+> Task :package_info_plus:extractDeepLinksDebug UP-TO-DATE
+> Task :package_info_plus:processDebugManifest UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:outputDebugAppLinkSettings UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :geolocator_android:mapDebugSourceSetPaths UP-TO-DATE
+> Task :geolocator_android:compileDebugLibraryResources UP-TO-DATE
+> Task :maplibre_gl:mapDebugSourceSetPaths UP-TO-DATE
+> Task :maplibre_gl:compileDebugLibraryResources UP-TO-DATE
+> Task :package_info_plus:mapDebugSourceSetPaths UP-TO-DATE
+> Task :package_info_plus:compileDebugLibraryResources UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :app:dexBuilderDebug UP-TO-DATE
+> Task :app:mergeDebugGlobalSynthetics UP-TO-DATE
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :geolocator_android:processDebugJavaRes NO-SOURCE
+> Task :maplibre_gl:processDebugJavaRes UP-TO-DATE
+> Task :package_info_plus:processDebugJavaRes UP-TO-DATE
+> Task :app:mergeDebugJavaResource UP-TO-DATE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :geolocator_android:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :maplibre_gl:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :package_info_plus:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :app:mergeProjectDexDebug UP-TO-DATE
+> Task :app:mergeLibDexDebug UP-TO-DATE
+> Task :app:configureCMakeDebug[arm64-v8a]
+> Task :app:buildCMakeDebug[arm64-v8a]
+> Task :app:configureCMakeDebug[armeabi-v7a]
+> Task :app:buildCMakeDebug[armeabi-v7a]
+> Task :app:configureCMakeDebug[x86_64]
+> Task :app:buildCMakeDebug[x86_64]
+> Task :app:copyJniLibsflutterBuildDebug
+> Task :app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :geolocator_android:mergeDebugJniLibFolders UP-TO-DATE
+> Task :geolocator_android:mergeDebugNativeLibs NO-SOURCE
+> Task :geolocator_android:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :maplibre_gl:mergeDebugJniLibFolders UP-TO-DATE
+> Task :maplibre_gl:mergeDebugNativeLibs NO-SOURCE
+> Task :maplibre_gl:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :package_info_plus:mergeDebugJniLibFolders UP-TO-DATE
+> Task :package_info_plus:mergeDebugNativeLibs NO-SOURCE
+> Task :package_info_plus:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :app:mergeDebugNativeLibs UP-TO-DATE
+> Task :app:stripDebugDebugSymbols UP-TO-DATE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :geolocator_android:checkDebugAarMetadata UP-TO-DATE
+> Task :geolocator_android:stripDebugDebugSymbols NO-SOURCE
+> Task :geolocator_android:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :geolocator_android:extractDebugAnnotations UP-TO-DATE
+> Task :geolocator_android:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :geolocator_android:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :geolocator_android:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :geolocator_android:prepareDebugArtProfile UP-TO-DATE
+> Task :geolocator_android:prepareLintJarForPublish UP-TO-DATE
+> Task :geolocator_android:mergeDebugJavaResource UP-TO-DATE
+> Task :geolocator_android:syncDebugLibJars UP-TO-DATE
+> Task :geolocator_android:bundleDebugAar UP-TO-DATE
+> Task :geolocator_android:assembleDebug UP-TO-DATE
+> Task :maplibre_gl:checkDebugAarMetadata UP-TO-DATE
+> Task :maplibre_gl:stripDebugDebugSymbols NO-SOURCE
+> Task :maplibre_gl:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :maplibre_gl:extractDebugAnnotations UP-TO-DATE
+> Task :maplibre_gl:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :maplibre_gl:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :maplibre_gl:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :maplibre_gl:prepareDebugArtProfile UP-TO-DATE
+> Task :maplibre_gl:prepareLintJarForPublish UP-TO-DATE
+> Task :maplibre_gl:mergeDebugJavaResource UP-TO-DATE
+> Task :maplibre_gl:syncDebugLibJars UP-TO-DATE
+> Task :maplibre_gl:bundleDebugAar UP-TO-DATE
+> Task :maplibre_gl:assembleDebug UP-TO-DATE
+> Task :package_info_plus:checkDebugAarMetadata UP-TO-DATE
+> Task :package_info_plus:stripDebugDebugSymbols NO-SOURCE
+> Task :package_info_plus:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :package_info_plus:extractDebugAnnotations UP-TO-DATE
+> Task :package_info_plus:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :package_info_plus:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :package_info_plus:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :package_info_plus:prepareDebugArtProfile UP-TO-DATE
+> Task :package_info_plus:prepareLintJarForPublish UP-TO-DATE
+> Task :package_info_plus:mergeDebugJavaResource UP-TO-DATE
+> Task :package_info_plus:syncDebugLibJars UP-TO-DATE
+> Task :package_info_plus:bundleDebugAar UP-TO-DATE
+> Task :package_info_plus:assembleDebug UP-TO-DATE
+> Task :app:compressDebugAssets
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleDebug
+
+[Incubating] Problems report is available at: file:///C:/PRM393/Map-demo/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 56s
+145 actionable tasks: 16 executed, 129 up-to-date
+C:\PRM393\Map-demo\build\app\outputs\flutter-apk\app-debug.apk

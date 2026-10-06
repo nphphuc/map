@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-05",
+  "structure_validation": "passed_all_nine_checks",
+  "citation_validation": "passed_non_strict",
+  "manual_citation_reviews": [
+    {
+      "display_number": 1,
+      "automatic_result": "HEAD returned HTTP404",
+      "manual_result": "Exact page opened by native web tool; official Uber steps 1–7 visible and inspected; not a fabricated citation.",
+      "url": "https://help.uber.com/en/riders/article/how-to-request-a-ride?nodeId=e9862b49-81c6-4c6a-a9d3-3c05bf42e82e"
+    },
+    {
+      "display_number": 2,
+      "automatic_result": "HEAD succeeded on first run; returned HTTP406 on final logged run",
+      "manual_result": "Exact official Uber upfront pricing page opened by native web tool and inspected. HEAD accessibility varies; page is not a fabricated citation.",
+      "url": "https://www.uber.com/us/en/ride/how-it-works/upfront-pricing/"
+    },
+    {
+      "display_number": 5,
+      "automatic_result": "Very generic short title heuristic",
+      "manual_result": "Exact title OpenFreeMap Quick Start Guide matches official page; mobile/custom style sections inspected."
+    }
+  ],
+  "manual_claim_review": "All factual source summaries checked against relevant full source sections; inference entries explicitly marked. Lexical verification supplements this review and is not proof by itself.",
+  "report_words_whitespace": 5649,
+  "mobile_build_or_benchmark_claims": false
+}

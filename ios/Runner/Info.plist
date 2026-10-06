@@ -7,7 +7,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Map</string>
+	<string>Ride Map Demo</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Chọn vị trí hiện tại làm điểm đón khi bạn nhấn nút vị trí.</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

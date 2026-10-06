@@ -1,0 +1,32 @@
+[
+  {
+    "Path": "/",
+    "Status": 200,
+    "Bytes": 2270
+  },
+  {
+    "Path": "/flutter_bootstrap.js",
+    "Status": 200,
+    "Bytes": 13091
+  },
+  {
+    "Path": "/main.dart.js",
+    "Status": 200,
+    "Bytes": 3110250
+  },
+  {
+    "Path": "/manifest.json",
+    "Status": 200,
+    "Bytes": 1022
+  },
+  {
+    "Path": "/assets/assets/map/ride_style.json",
+    "Status": 200,
+    "Bytes": 63539
+  },
+  {
+    "Path": "/assets/assets/fonts/Manrope.ttf",
+    "Status": 200,
+    "Bytes": 164700
+  }
+]

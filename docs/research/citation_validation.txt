@@ -1,0 +1,47 @@
+
+============================================================
+CITATION VERIFICATION: report.md
+============================================================
+
+Found 20 citations
+
+  [3] URL accessible ✓
+  [4] URL accessible ✓
+  [5] URL accessible ✓
+  [6] URL accessible ✓
+  [7] URL accessible ✓
+  [8] URL accessible ✓
+  [9] URL accessible ✓
+  [10] URL accessible ✓
+  [11] URL accessible ✓
+  [12] URL accessible ✓
+  [13] URL accessible ✓
+  [14] URL accessible ✓
+  [15] URL accessible ✓
+  [16] URL accessible ✓
+  [17] URL accessible ✓
+  [18] URL accessible ✓
+  [19] URL accessible ✓
+  [20] URL accessible ✓
+
+============================================================
+VERIFICATION SUMMARY
+============================================================
+
+DOI Verified: 0/20
+URL Verified: 17/20
+Suspicious: 1/20
+Unverified: 2/20
+
+SUSPICIOUS CITATIONS (Manual Review Needed):
+
+  [5]
+    - Very generic short title
+
+UNVERIFIED CITATIONS (Could not check):
+  [1] URL check failed: HTTP 404
+  [2] URL check failed: HTTP 406
+
+WARNING: Suspicious citations detected
+  (Continuing in non-strict mode)
+CITATION VERIFICATION PASSED

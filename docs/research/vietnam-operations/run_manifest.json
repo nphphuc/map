@@ -1,0 +1,36 @@
+{
+  "query": "Nghiệp vụ khoảng cách/cước/đường dài/ngoại lệ Grab, Be, XanhSM cho bản demo map Flutter không xác thực",
+  "mode": "quick_primary_policy_deep_dive",
+  "date": "2026-10-06",
+  "timezone": "Asia/Saigon",
+  "source_count": 14,
+  "assumptions": [
+    "User asks nationwide educational simulation, not commercial dispatch.",
+    "Published proprietary quotes cannot be reproduced from public static tables.",
+    "Parent chooses unbranded demo reference tariff; thresholds are disclosed proposals."
+  ],
+  "providers": {
+    "search": "native Codex web",
+    "domains": [
+      "grab.com",
+      "be.com.vn",
+      "greensm.com"
+    ],
+    "reference_ledgers": "local UTF-8 JSONL"
+  },
+  "excluded": [
+    "Unauthenticated third-party price comparisons",
+    "Unavailable Grabhelp current fee numeric excerpt",
+    "Claims of sub1metre guaranteed consumerGPS accuracy",
+    "Claim live traffic/driver availability"
+  ],
+  "coverage": [
+    "Urban and longdistance",
+    "Cross-country SG-Hanoi",
+    "Vehicle types, tiers and price freshness",
+    "Tolls/waiting/night/roundtrip",
+    "Pickup and destination changes",
+    "No-route and no-driver states"
+  ],
+  "adaptation": "Current Green intercity corridor policy26/08/2026 replaced original emphasis on2023 taxi article; added explicit no-universal-price conclusion."
+}

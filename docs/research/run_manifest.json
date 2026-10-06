@@ -1,0 +1,46 @@
+{
+  "version": "3.0.0",
+  "query": "Rebuild Flutter mobile map demo with Uber-inspired booking flow, no auth; maps, places, route, distance, time and transparent demo fare.",
+  "mode": "standard",
+  "started_at": "2026-10-05T11:25:41.128456+00:00",
+  "finished_at": "2026-10-05T11:35:09.521889+00:00",
+  "client_date": "2026-10-05",
+  "client_timezone": "Asia/Saigon",
+  "assumptions": [
+    "User wants code and a reviewable local web preview, with mobile source; educational HCMC scope.",
+    "No provider keys available for core demo; public endpoint usage stays small.",
+    "Official source facts may have one authoritative source; architectural recommendation triangulated across maintainers.",
+    "No mobile build/benchmark assertions in research; runtime test outcomes belong to implementation report."
+  ],
+  "provider_config": {
+    "primary": "Codex native web search/open",
+    "scholarly": null
+  },
+  "report_dir": "C:\\PRM393\\Map-demo\\docs\\research",
+  "artifact_paths": {
+    "report": "report.md",
+    "sources": "sources.jsonl",
+    "evidence": "evidence.jsonl",
+    "claims": "claims.jsonl",
+    "display_numbers": "display_numbers.json",
+    "html": "report.html"
+  },
+  "scope_adaptations": [
+    "Current Mapbox Flutter v3 has web support; removed older mobile-only premise.",
+    "Current CARTO keys required; selected OpenFreeMap.",
+    "Nominatim public autocomplete forbidden; selected Photon.",
+    "OSRM speed sources can be configured, but this public-demo integration lacks live traffic evidence; label duration accordingly."
+  ],
+  "quality": {
+    "source_count": 20,
+    "quoted_words_max_per_source": 20,
+    "claim_support": "manual inspected, flags in claims.jsonl",
+    "source_diversity_note": "Primary technical docs, provider policies, and official Uber product guidance. No third-party marketing or academic benchmarks needed for this API choice.",
+    "structure_validator": "passed",
+    "citation_validator": "passed_non_strict_with_manual_review_of_3_warnings",
+    "manual_review_notes": "verification_notes.json",
+    "word_count_whitespace": 5649,
+    "html_validator": "passed",
+    "automated_claim_support": "strict pass; 20 factual supported, 5 synthesis partial; manual inference support retained separately"
+  }
+}

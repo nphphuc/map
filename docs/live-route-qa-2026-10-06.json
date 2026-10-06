@@ -1,0 +1,63 @@
+[
+  {
+    "Name": "TP.HCM local",
+    "HttpStatus": 200,
+    "Code": "Ok",
+    "Milliseconds": 1334,
+    "Cors": [
+      "*"
+    ],
+    "Meters": 4407.2,
+    "Seconds": 392.4,
+    "Points": 206,
+    "ReferenceFareVnd": 68000.0
+  },
+  {
+    "Name": "Ha Noi local",
+    "HttpStatus": 200,
+    "Code": "Ok",
+    "Milliseconds": 660,
+    "Cors": [
+      "*"
+    ],
+    "Meters": 4166.8,
+    "Seconds": 412,
+    "Points": 203,
+    "ReferenceFareVnd": 64000.0
+  },
+  {
+    "Name": "Da Nang to Hoi An",
+    "HttpStatus": 200,
+    "Code": "Ok",
+    "Milliseconds": 697,
+    "Cors": [
+      "*"
+    ],
+    "Meters": 30884.2,
+    "Seconds": 1695.6,
+    "Points": 623,
+    "ReferenceFareVnd": 452000.0
+  },
+  {
+    "Name": "TP.HCM to Ha Noi",
+    "HttpStatus": 200,
+    "Code": "Ok",
+    "Milliseconds": 1721,
+    "Cors": [
+      "*"
+    ],
+    "Meters": 1492195.7,
+    "Seconds": 68071.4,
+    "Points": 16990,
+    "ReferenceFareVnd": 19888000.0
+  },
+  {
+    "Name": "Offshore no-road recovery",
+    "HttpStatus": 400,
+    "Code": "NoSegment",
+    "Milliseconds": 658,
+    "Cors": [
+      "*"
+    ]
+  }
+]
