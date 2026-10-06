@@ -1,9 +1,14 @@
 import 'ride_models.dart';
 
 class DeviceLocation {
-  const DeviceLocation(this.point, {required this.accuracyMeters});
+  const DeviceLocation(
+    this.point, {
+    required this.accuracyMeters,
+    this.sourceLabel,
+  });
   final GeoPoint point;
   final double accuracyMeters;
+  final String? sourceLabel;
 }
 
 abstract class DeviceLocationService {

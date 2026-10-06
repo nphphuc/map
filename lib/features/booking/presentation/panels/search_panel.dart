@@ -106,7 +106,7 @@ class _SearchPanelState extends State<SearchPanel> {
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
               ),
               subtitle: Text(
-                b.locationAccuracyLabel,
+                b.locationFailure?.message ?? b.locationAccuracyLabel,
                 style: const TextStyle(fontSize: 11, color: muted),
               ),
               onTap: b.locating ? null : widget.onUseCurrentLocation,

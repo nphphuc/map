@@ -79,9 +79,9 @@ class HomePanel extends StatelessWidget {
               b.openPin();
             },
             icon: const Icon(Icons.location_on_outlined, size: 17),
-            label: const Text(
-              'Vị trí gần đúng · chỉnh điểm đón',
-              style: TextStyle(fontSize: 12),
+            label: Text(
+              b.locationAccuracyLabel,
+              style: const TextStyle(fontSize: 12),
             ),
           ),
         const Divider(),
@@ -104,6 +104,12 @@ class HomePanel extends StatelessWidget {
               style: const TextStyle(fontSize: 12),
             ),
             onTap: b.locating ? null : onLocate,
+          ),
+        if (!b.hasPickup && !b.locating)
+          TextButton.icon(
+            onPressed: () => b.openSearch(pickupField: true),
+            icon: const Icon(Icons.search, size: 18),
+            label: const Text('Tìm địa chỉ điểm đón'),
           ),
         for (final place
             in b.recentPlaces.where((p) => p.id != b.pickup?.id).take(2))

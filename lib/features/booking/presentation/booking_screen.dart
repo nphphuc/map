@@ -50,11 +50,12 @@ class _BookingScreenState extends State<BookingScreen> {
   Future<void> _locate({bool selectPickup = false}) async {
     await booking.locate(selectPickup: selectPickup);
     if (!mounted || booking.locationFailure == null) return;
+    final failure = booking.locationFailure!;
     final retry = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Vị trí chưa sẵn sàng'),
-        content: Text(booking.locationFailure!.message),
+        content: Text(failure.message),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),

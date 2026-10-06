@@ -8,7 +8,7 @@ Flutter 3.47.3 / Dart 3.13.3. Android cần JDK 21+; iOS cần macOS/Xcode.
 
 ```powershell
 flutter pub get
-flutter run -d web-server --web-hostname 127.0.0.1 --web-port 52341
+.\tool\run_web.ps1
 ```
 
 Bản release:
@@ -18,7 +18,15 @@ flutter build web --release --no-wasm-dry-run
 python -m http.server 52341 --bind 127.0.0.1 --directory build/web
 ```
 
-Mở `http://127.0.0.1:52341/` trên trình duyệt hỗ trợ WebGL2. Build Android trên máy Windows hiện tại:
+Mở `http://127.0.0.1:52341/` trên trình duyệt hỗ trợ WebGL2.
+
+`run_web.ps1` build bản web và chạy preview server chỉ trên loopback. Bản preview Windows đọc vị trí mới từ Windows Location (GPS/Wi-Fi), sử dụng quyền vị trí của ứng dụng desktop trong Windows. Đây là vị trí thật của máy, có nhãn nguồn và sai số; không phải tọa độ mock. Windows phải đang cho phép ứng dụng desktop dùng vị trí. Không đổi quyền trình duyệt hoặc dùng vị trí mặc định của Windows. Retry đọc lại vị trí mới. Endpoint vị trí chỉ nhận POST từ đúng origin preview; không mở CORS và không ghi tọa độ vào log. Android/iOS vẫn dùng geolocator native; bản web không bật companion vẫn dùng Geolocation của trình duyệt.
+
+Preview dùng relay tìm kiếm cố định tới [Photon KoalaSec](https://photon.koalasec.org), một [instance công cộng được chủ server công bố](https://github.com/Freika/dawarich/discussions/693), để tránh timeout của instance Komoot ở thời điểm kiểm tra. Relay không chuyển tọa độ thiết bị cho server tìm kiếm. Kết quả vẫn là dữ liệu OSM thật. Companion Windows/relay này dành cho preview local; khi deploy web cần trình duyệt hỗ trợ định vị và backend geocoder phù hợp.
+
+Flutter debug thông thường (`flutter run -d web-server --web-hostname 127.0.0.1 --web-port 52341`) và bản release tự serve bằng Python không có companion. Dùng `run_web.ps1` để demo trong Codex.
+
+Build Android trên máy Windows hiện tại:
 
 ```powershell
 .\tool\build_android.ps1
@@ -32,7 +40,7 @@ Khi mở app, controller yêu cầu vị trí thiết bị mới với độ ch�
 
 Không thể bảo đảm GPS chính xác 100% hoặc dưới 1 m bằng code Flutter. `accuracy` là số thiết bị/trình duyệt báo, được hiển thị trung thực trong bộ chọn điểm đón. Khi vị trí gần đúng, người dùng chỉnh pin đến cửa/lối đón. Hệ điều hành, phần cứng, trong nhà và quyền vị trí gần đúng có thể làm sai số lớn. Xem chuẩn [W3C Geolocation](https://www.w3.org/TR/geolocation/).
 
-Autocomplete chạy khi gõ từ 2 ký tự, debounce 180 ms; kết quả thật đã tìm trong phiên hiện ngay, truy vấn HTTP cũ bị hủy, kết quả cũ không ghi đè câu mới. Photon lọc Việt Nam và ưu tiên gần điểm đón. Không dùng danh sách địa điểm TP.HCM mặc định. Dữ liệu OSM có thể thiếu số nhà/POI; chọn pin nếu kết quả không đủ chính xác.
+Autocomplete chạy khi gõ từ 2 ký tự, debounce 180 ms; kết quả thật đã tìm trong phiên hiện ngay, truy vấn HTTP cũ bị hủy, kết quả cũ không ghi đè câu mới. Photon lọc Việt Nam; kết quả đã có trong phiên được xếp theo khoảng cách tới điểm đón trên thiết bị. Không gửi tọa độ thiết bị trong truy vấn autocomplete. Không dùng danh sách địa điểm TP.HCM mặc định. Dữ liệu OSM có thể thiếu số nhà/POI; chọn pin nếu kết quả không đủ chính xác.
 
 Máy chủ Photon công cộng không có SLA. Đo ngày 06/10: một số truy vấn mất khoảng 1,8–3,9 giây. Deadline tìm kiếm là 6 giây, bao gồm cả chờ HTTP headers. Muốn đảm bảo autocomplete có độ trễ thấp cần geocoder tự host hoặc dịch vụ có quota/SLA; đây là giới hạn provider, không thể giải quyết chỉ bằng giảm debounce.
 

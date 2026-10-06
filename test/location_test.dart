@@ -9,6 +9,7 @@ import 'package:map/core/app_theme.dart';
 import 'fixtures/places.dart';
 
 import 'package:map/features/booking/data/geolocator_location_service.dart';
+import 'package:map/features/booking/data/browser_position_options.dart';
 import 'package:map/features/booking/domain/device_location.dart';
 import 'package:map/features/booking/domain/ride_models.dart';
 import 'package:map/features/booking/presentation/booking_controller.dart';
@@ -155,13 +156,82 @@ void main() {
         web: true,
       ).currentLocation();
       expect(platform.permissionRequests, 0);
-      expect(platform.permissionChecks, 0);
+      expect(platform.permissionChecks, 1);
       expect(platform.positionRequests, 1);
       expect(platform.streamRequests, 1);
       expect(platform.streamCancellations, 1);
       expect(platform.settings!.timeLimit, const Duration(seconds: 12));
       expect(location.point.cacheKey, gpsPoint.cacheKey);
       expect(location.accuracyMeters, 24.3);
+    },
+  );
+
+  test(
+    'Browser timeout uses milliseconds and never accepts cached positions',
+    () {
+      const options = BrowserPositionOptions(timeout: Duration(seconds: 12));
+      expect(options.timeoutMilliseconds, 12000);
+      expect(options.maximumAgeMilliseconds, 0);
+    },
+  );
+
+  test(
+    'Blocked browser permission fails before starting a position watch',
+    () async {
+      final platform = TestPlatform()
+        ..permission = LocationPermission.deniedForever;
+      await expectLater(
+        GeolocatorLocationService(
+          platform: platform,
+          web: true,
+        ).currentLocation(),
+        throwsA(
+          isA<LocationFailure>().having(
+            (e) => e.kind,
+            'kind',
+            LocationFailureKind.permission,
+          ),
+        ),
+      );
+      expect(platform.streamRequests, 0);
+      expect(platform.permissionRequests, 0);
+    },
+  );
+
+  test(
+    'Web timeout separates pending permission from a granted provider timeout',
+    () async {
+      final platform = TestPlatform()
+        ..positionError = TimeoutException('Timeout expired')
+        ..permission = LocationPermission.denied;
+      final service = GeolocatorLocationService(platform: platform, web: true);
+      await expectLater(
+        service.currentLocation(),
+        throwsA(
+          isA<LocationFailure>().having(
+            (e) => e.message,
+            'pending permission',
+            contains('chưa xác nhận quyền'),
+          ),
+        ),
+      );
+      expect(platform.streamCancellations, 1);
+      platform.permission = LocationPermission.whileInUse;
+      await expectLater(
+        service.currentLocation(),
+        throwsA(
+          isA<LocationFailure>().having(
+            (e) => e.message,
+            'provider timeout',
+            contains('Nguồn định vị'),
+          ),
+        ),
+      );
+      expect(platform.streamCancellations, 2);
+      platform.positionError = null;
+      final location = await service.currentLocation();
+      expect(location.point.cacheKey, gpsPoint.cacheKey);
+      expect(platform.streamCancellations, 3);
     },
   );
 
@@ -300,7 +370,9 @@ void main() {
       expect(controller.locationNotice, contains('25 m'));
       repository.addressPending!.complete(demoPlaces.first);
       await pending;
-      expect(controller.pickup!.name, 'Landmark 81');
+      expect(controller.pickup!.name, 'Vị trí của bạn');
+      expect(controller.pickup!.id, 'device-location');
+      expect(controller.pickup!.address, contains('Gần Landmark 81'));
       expect(controller.pickup!.point.latitude, gpsPoint.latitude);
       expect(controller.pickup!.point.longitude, gpsPoint.longitude);
       controller.dispose();
@@ -424,6 +496,37 @@ void main() {
   );
 
   testWidgets(
+    'Pickup search retains the location failure and allows manual recovery',
+    (tester) async {
+      const message = 'Trình duyệt chưa xác nhận quyền Vị trí cho trang này.';
+      await tester.binding.setSurfaceSize(const Size(320, 640));
+      addTearDown(() => tester.binding.setSurfaceSize(null));
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: rideTheme(),
+          home: BookingScreen(
+            repository: LocationTestRepository(),
+            locationService: TestLocationService()
+              ..failure = const LocationFailure(
+                LocationFailureKind.timeout,
+                message,
+              ),
+            mapBuilder: (_) => const ColoredBox(color: Colors.grey),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Tìm địa chỉ điểm đón'));
+      await tester.pumpAndSettle();
+      expect(find.text(message), findsOneWidget);
+      await tester.tap(find.text('Chọn trên bản đồ'));
+      await tester.pumpAndSettle();
+      expect(find.text('Xác nhận điểm đón'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    },
+  );
+
+  testWidgets(
     'Retry after permission recovery updates pickup and exits the dialog',
     (tester) async {
       final service = TestLocationService()
@@ -448,7 +551,7 @@ void main() {
       await tester.tap(find.text('Thử lại'));
       await tester.pumpAndSettle();
       expect(find.text('Vị trí chưa sẵn sàng'), findsNothing);
-      expect(find.text('Đón tại Địa chỉ GPS'), findsOneWidget);
+      expect(find.text('Đón tại Vị trí của bạn'), findsOneWidget);
       expect(find.textContaining('Đã lấy vị trí'), findsNothing);
       expect(tester.takeException(), isNull);
     },

@@ -54,8 +54,8 @@ class BookingController extends ChangeNotifier {
       pickup?.name ?? (locating ? 'Đang lấy vị trí của bạn…' : 'Chọn điểm đón');
   String get locationAccuracyLabel {
     final accuracy = deviceLocation?.accuracyMeters;
-    return accuracy != null && accuracy.isFinite && accuracy >= 0
-        ? 'Sai số thiết bị báo: ${accuracy.ceil()} m · có thể chỉnh pin'
+    return accuracy != null && accuracy.isFinite && accuracy > 0
+        ? '${deviceLocation?.sourceLabel == null ? '' : '${deviceLocation!.sourceLabel} · '}Sai số thiết bị báo: ${accuracy.ceil()} m · có thể chỉnh pin'
         : 'Lấy vị trí từ thiết bị';
   }
 
@@ -110,7 +110,9 @@ class BookingController extends ChangeNotifier {
   }
 
   void openSearch({bool pickupField = false}) {
+    final previousLocationFailure = locationFailure;
     _cancelPointWork(preserveAutomatic: true);
+    locationFailure = previousLocationFailure;
     _cancelSearch();
     _searchVersion++;
     _routeVersion++;
@@ -354,9 +356,10 @@ class BookingController extends ChangeNotifier {
       try {
         final address = await repository.reverse(point);
         place = Place(
-          id: address.id,
-          name: address.name,
-          address: address.address,
+          id: 'device-location',
+          name: 'Vị trí của bạn',
+          address:
+              'Gần ${address.name}${address.address.isEmpty ? '' : ' · ${address.address}'}',
           point: point,
           countryCode: address.countryCode,
         );

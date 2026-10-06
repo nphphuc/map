@@ -9,9 +9,18 @@ import 'place_search.dart';
 
 /// One instance owns the HTTP client, caches and the routing request queue.
 class LiveBookingRepository implements BookingRepository, LivePlaceSearch {
-  LiveBookingRepository({http.Client? client})
-    : _client = client ?? http.Client();
+  LiveBookingRepository({http.Client? client, Uri? searchEndpoint})
+    : _client = client ?? http.Client(),
+      _searchEndpoint =
+          searchEndpoint ??
+          Uri.base.resolve(
+            const String.fromEnvironment(
+              'PHOTON_SEARCH_URL',
+              defaultValue: 'https://photon.komoot.io/api/',
+            ),
+          );
   final http.Client _client;
+  final Uri _searchEndpoint;
   final _searchCache = <String, List<Place>>{};
   final _routeCache = <String, TripRoute>{};
   final _reverseCache = <String, Place>{};
@@ -52,14 +61,14 @@ class LiveBookingRepository implements BookingRepository, LivePlaceSearch {
     try {
       final request = http.AbortableRequest(
         'GET',
-        Uri.https('photon.komoot.io', '/api/', {
-          'q': query.trim(),
-          'limit': '8',
-          'bbox': '102.14,8.17,110.0,23.4',
-          'countrycode': 'VN',
-          if (near != null) 'lat': '${near.latitude}',
-          if (near != null) 'lon': '${near.longitude}',
-        }),
+        _searchEndpoint.replace(
+          queryParameters: {
+            'q': query.trim(),
+            'limit': '8',
+            'bbox': '102.14,8.17,110.0,23.4',
+            'countrycode': 'VN',
+          },
+        ),
         abortTrigger: abort.future,
       );
       request.headers.addAll(_headers);
