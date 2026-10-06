@@ -1,0 +1,3 @@
+D/nativeloader( 8995): Load /data/app/~~_yZmIUGpcvSN7du-taYnoQ==/com.example.map-wRb6P1zGHn3gUPgOxGhlUQ==/base.apk!/lib/x86_64/libmaplibre.so using class loader ns clns-9 (caller=/data/app/~~_yZmIUGpcvSN7du-taYnoQ==/com.example.map-wRb6P1zGHn3gUPgOxGhlUQ==/base.apk): ok
+I/Mbgl-EGLConfigChooser( 8995): In emulator: false
+I/Mbgl    ( 8995): {TextureViewRend}[General]: GPU Identifier: Android Emulator OpenGL ES Translator (NVIDIA GeForce RTX 3050 Laptop GPU/PCIe/SSE2)

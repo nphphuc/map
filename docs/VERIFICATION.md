@@ -2,6 +2,8 @@
 
 ## Current build
 
+Additional Android Studio compiler incident: Flutter's configured JDK was 17 while MapLibre compiles Java 21 sources. Changed the local Flutter JDK to Android Studio JBR 25; standard `flutter run` built in 142.9 seconds, installed in 4.8 seconds, and launched on emulator-5556 with MapLibre native loaded. Startup screenshot shows the map behind Android's location permission dialog. Actual GPS and the IDE Run button remain unverified. See [JDK incident verification](android-studio-run-2026-10-06.md); the earlier build timings below belong to the previous checks.
+
 Windows, Flutter 3.47.3 / Dart 3.13.3. The local release is served at `http://127.0.0.1:52341/`.
 
 | Check | Observed result | Evidence |

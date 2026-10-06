@@ -26,6 +26,22 @@ Mở `http://127.0.0.1:52341/` trên trình duyệt hỗ trợ WebGL2. Build And
 
 APK: `build/app/outputs/flutter-apk/app-debug.apk`. Các provider hiện tại không cần API key. Desktop bị tắt trong cấu hình riêng của dự án.
 
+### Run trong Android Studio: JDK 21+
+
+MapLibre cần compiler Java 21+. Nếu Flutter đang chọn JDK 17, nút Run của Android Studio sẽ lỗi `invalid source release: 21`, dù script `build_android.ps1` vẫn build được với JDK khác. `sourceCompatibility = 17` của app không hạ yêu cầu compiler của plugin.
+
+Chọn JDK 21+ trong cấu hình Flutter rồi kiểm tra `Java binary at` và `Java version` của `flutter doctor -v`. Trên máy hiện tại, JBR đi kèm Android Studio là Java 25 và đã kiểm tra với Gradle 9.3.1:
+
+```powershell
+flutter config --jdk-dir="C:\Program Files\Android\Android Studio\jbr"
+flutter doctor -v
+flutter run -d emulator-5556
+```
+
+Đường dẫn và device ID bên trên dành cho máy hiện tại; máy khác dùng đường dẫn JDK và ID từ `flutter devices`. Đây là cấu hình chung của Flutter trên máy, không phải thay đổi `JAVA_HOME` của hệ thống. Nếu IDE còn giữ cấu hình cũ, khởi động lại Android Studio rồi Run. Khi chạy Gradle trực tiếp trong IDE, đặt **Settings → Build, Execution, Deployment → Build Tools → Gradle → Gradle JDK** về cùng JDK 21+.
+
+Không commit đường dẫn JDK tuyệt đối vào `android/gradle.properties`. Gradle sẽ báo lỗi rõ ngay từ đầu nếu chạy bằng JDK thấp hơn 21. Tham khảo [Flutter Java/Gradle](https://docs.flutter.dev/release/breaking-changes/android-java-gradle-migration-guide) và [Gradle Java compatibility](https://docs.gradle.org/current/userguide/compatibility.html).
+
 ## Vị trí và tìm kiếm
 
 Khi mở app, controller yêu cầu vị trí thiết bị mới với độ chính xác cao. Web dùng `maximumAge: 0`, deadline toàn yêu cầu 20 giây. Chưa nhận được tọa độ thì **điểm đón để trống**, bản đồ chỉ hiển thị khung Việt Nam; không tạo điểm đón ở TP.HCM hay dùng địa chỉ người dùng nêu làm mặc định. Nút **Chọn vị trí hiện tại của bạn** nằm trong bước chọn điểm đón. Tọa độ cập nhật ngay, tên địa chỉ được tìm sau. Từ chối quyền, timeout và dịch vụ vị trí tắt có đường phục hồi bằng thử lại/chọn pin.

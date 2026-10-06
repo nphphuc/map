@@ -4,6 +4,8 @@ Ngày cập nhật: 06/10/2026. Môi trường: Windows, Flutter 3.47.3; bản w
 
 ## Cập nhật chức năng ngày 06/10/2026
 
+**Kiểm tra bổ sung lỗi Android Studio Run:** đã đổi JDK Flutter từ 17 sang JBR 25; `flutter run` build/cài/mở app trên emulator-5556 thành công và MapLibre native tải được. Ảnh startup có bản đồ phía sau dialog xin quyền vị trí. Chưa chọn quyền hoặc chứng nhận GPS thật. Chi tiết và log trong [QA lỗi JDK](android-studio-run-2026-10-06.md).
+
 Phần bên dưới mô tả bản hiện tại. Các bảng và ảnh ngày 05/10 là lịch sử của bản trước; biểu phí cũ, điểm đón cố định và tuyến lưu sẵn đã được thay thế.
 
 | Kiểm tra | Bằng chứng | Kết quả |
